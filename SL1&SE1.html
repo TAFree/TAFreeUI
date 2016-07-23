@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		.block{
+			width: 350px;
+			height:270px;
+			border:1px solid black;
+			float:left;
+			margin:15px;
+			overflow:hidden;
+		}
+		.title{
+			width:100%;
+			min-height: 1em;
+			background:#6699FF;
+			border:none;
+			padding:4px;
+			border-bottom:1px solid black;
+			box-sizing: border-box;
+		}
+		input.enlarge{
+			float:right;
+			padding:2px;
+			margin-right:5px;
+		}
+		.code{
+			width:100%;
+			height:90%;
+			box-sizing: border-box;
+			overflow-y:auto;
+			font-size: 16px;
+		}
+		textarea{
+			width:100%;
+			height:98%;
+			margin:0;
+			box-sizing: border-box;
+			resize:none;
+			overflow:hidden;
+			font-size: 16px;
+		}
+		h{
+			padding:5px 5px 5px;
+		}
+		.bottom{
+			width: 100%;
+			height:100px;
+			text-align:center;
+			position: relative;
+			margin-top: 10px;
+			float:left;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<form>
+
+		<input type="button" value="Description">
+		<br>
+
+		<div class="block">
+			<div class="title">blank.java
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<textarea name="codearea" onkeyup="autogrow(this);"></textarea>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">lock.java
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<h>lock code</h>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">unlock.java
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<p>here is code locked.<br>here is code locked.<br>here is code locked.</p>
+				<textarea name="codearea" onkeyup="autogrow(this);"></textarea>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">fuzzy.java
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<textarea name="codearea"></textarea>
+			</div>
+		</div>
+
+
+		<div class="bottom">
+			key:<input type="text" name="key">
+			<br>
+			<input type="submit" value="Submit">
+		</div>
+
+	</form>
+
+	<script>
+		function autogrow(textarea){
+
+			var adjustedHeight=textarea.clientHeight;
+	    	adjustedHeight=Math.max(textarea.scrollHeight,adjustedHeight);
+
+	    	if (adjustedHeight>textarea.clientHeight){
+	        textarea.style.height=adjustedHeight+'px';
+	    	}
+		}
+
+		function enlarge(button){
+			var title=button.parentElement;
+			var block=title.parentElement;
+			var form=document.getElementsByTagName('form')[0].children;
+
+			if (button.value=='><'){
+				for (var i = 0; i < form.length; i++) {
+    				form[i].style.display="";
+				}
+				button.value='<>';
+				block.style.width='350px';
+				block.style.height='270px';
+			}
+			else{
+				for (var i = 0; i < form.length; i++) {
+    				form[i].style.display="none";
+				}
+				block.style.display='block';
+				button.value='><';
+				block.style.width='90vw';
+				block.style.height='90vh';
+			}
+		}
+	</script>
+
+</body>
+</html>
