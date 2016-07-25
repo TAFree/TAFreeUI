@@ -1,0 +1,41 @@
+
+#div01{
+	position: absolute;
+   	left:15%;
+    top: 20%;
+    width: 100%;
+    text-align:center;
+	}
+#div02{
+	position: absolute;
+   	left:20%;
+    top: 40%;
+    width: 100%;
+    text-align:center;
+	}
+#table01 {
+	border-collapse: collapse;
+	width:70%;
+
+	}
+#table02{
+	border-collapse: collapse;
+	width:60%;
+}
+th {
+	background-color:DarkTurquoise;
+	color:white;
+	font-family: Verdana;
+	text-align: center;
+	}
+td {
+	background-color:LightBlue;
+	color:black;
+	font-family:Arial;
+	}
+#inputsub{
+	position: absolute;
+	left:30%;
+	top:120%;
+}
+		
