@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Upload Answer</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="styleFPA0&FPM1.css">
+		<script type="text/javascript" src="FPA0add.js"></script>
+		<script type="text/javascript" src="FPA0dim.js"></script>
+	</head>
+
+	<body>
+		<form action="action_page.php">
+		<table>
+			<tr>
+				<th>Item &nbsp<select name="Lab">
+					<option value="l1">Lab1</option>
+					<option value="l2">Lab2</option>
+					<option value="l3">Lab3</option>
+					<option value="l4">Lab4</option>
+					<option value="l5">Lab5</option>
+					<option value="l6">Lab6</option>
+					<option value="l7">Lab7</option>
+					<option value="l8">Lab8</option>
+					<option value="l9">Lab9</option>
+					<option value="l10">Lab10</option>
+					<option value="l11">Lab11</option>
+					<option value="l12">Lab12</option>
+					<option value="l13">Lab13</option></select>
+				</th>
+				<th>Problem &nbsp<input type="text"></th>
+				<th>Judge  &nbsp<select name="jg">
+					<option value="jd1">Automatic</option>
+					<option value="jg2">Manual</option>
+					</select>
+				</th>
+			</tr>
+			<tr id="tr_odd">
+				<td>Class</td>
+				<td>File(.java)</td>
+				<td>Disription</td>
+			</tr>
+			<tr id="tr_even">
+				<button id="button_dim" type="button" value="-" onclick="dim()"><b>-</b></button>
+				<td><input type="text" value="ans1"></td>
+				<td><input type="file" value="ans1"></td>
+				<td rowspan="2"><input type="file" value="discription"></td>
+			</tr>
+			<tr id="tr_odd">
+				<button id="button_add" type="button" value="+" onclick="add(this)"><b>+</b></button>
+				<td><input type="text" value="ans2"></td>
+				<td><input type="file" value="ans2"></td>
+			</tr>
+				<div id="addrow"></div>
+			<br>
+			<br>
+			<button id="buttonsub" type="submit" value="save">save</button>
+		</table>
+		</form>
+	</body>
+</html>
