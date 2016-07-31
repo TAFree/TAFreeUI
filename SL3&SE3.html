@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+	<style>
+	.strow{
+		width:95%;
+		height:74vh;
+		margin-left:25px;
+		float:left;
+	}
+	.row{
+		width:95%;
+		margin-left:25px;
+		float:left;
+	}
+	.block{
+		width:45%;
+		height:50vh;
+		position: absolute;
+		top:50%;
+		left: 50%;
+		margin:-29vh 0 0 -23%;
+		float:left;
+		border:1px solid black;
+	}
+	table, th, td {
+    	border: 1px solid black;
+    	border-collapse: collapse;
+	}
+	table{
+		width:45%;
+		margin:25px;
+		margin-bottom: 10px;
+	}
+	th, td{
+		padding:5px;
+		text-align:center;
+	}
+	.title{
+		width:100%;
+		min-height: 1em;
+		border:none;
+		padding:4px;
+		font-size: 16px;
+		text-align: center;
+		border-bottom:1px solid black;
+		box-sizing: border-box;
+	}
+	.check{
+		width:16px;
+		height:16px;
+	}
+	.text{
+		height:100%;
+	}
+	hr{
+		color:#000000;
+	}
+	.bottom{
+		width:90%;
+		height:20vh;
+		margin:25px;
+		margin-left: 50px;
+		border:1px solid black;
+		box-sizing: border-box;
+		float:left;
+	}
+	.comText{
+		height:100%;
+	}
+	
+	</style>
+</head>
+<body>
+	<div class="strow">
+		<table>
+			<tr>
+				<th>key</th>
+				<th>result</th>
+			</tr>
+			<tr>
+				<td>
+					<img src="http://www.hackingchinese.com/wp-content/uploads/2015/09/check-37583_1280.png" class="check">
+				</td>
+				<td>
+					<img src="http://chai21.com/wp-content/uploads/2015/01/Unknown.png" class="check">
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="row">
+		<div class="block">
+			<div class="title">Output</div>
+			<div class="text"></div>
+		</div>
+	</div>
+	<div class="row">
+	<hr>
+	</div>
+	<div class="bottom">
+		<div class="title">Compiler Message</div>
+		<div id="comText"></div>
+	</div>
+</html>
+</body>
