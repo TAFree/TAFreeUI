@@ -43,6 +43,11 @@
 			margin-right:5px;
 			font-size: 12px;
 		}
+		input.enlarge{
+			float:right;
+			padding:2px;
+			margin-right:5px;
+		}
 		.code{
 			width:100%;
 			height:90%;
@@ -92,60 +97,64 @@
 		<input type="button" value="Description" class="button">
 		<br>
 
-		<div class="MRow">
-			<div class="block">
-				<div class="title">one.java
-					<select disabled>
-						<option value="blank" selected>blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
+	
+		<div class="block">
+			<div class="title">one.java
+				<select disabled>
+					<option value="blank" selected>blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
 			</div>
-			<div class="block">
-				<div class="title">two.java
-					<select disabled>
-						<option value="blank">blank</option>
-						<option value="lock" selected>lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
-			</div>
-			<div class="block">
-				<div class="title">three.java
-					<select disabled>
-						<option value="blank">blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock" selected>unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
-			</div>
-			<div class="block">
-				<div class="title">four.java
-					<select disabled>
-						<option value="blank">blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy" selected>fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
+			<div class="code">
+				<pre>Code...</pre>
 			</div>
 		</div>
+		<div class="block">
+			<div class="title">two.java
+				<select disabled>
+					<option value="blank">blank</option>
+					<option value="lock" selected>lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<pre>Code...</pre>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">three.java
+				<select disabled>
+					<option value="blank">blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock" selected>unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<pre>Code...</pre>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">four.java
+				<select disabled>
+					<option value="blank">blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy" selected>fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<pre>Code...</pre>
+			</div>
+		</div>
+	
 
 		<div class="row">
 			From&nbsp;<input type="date" class="date">
@@ -183,6 +192,29 @@
 	    	if (adjustedHeight>textarea.clientHeight){
 	        textarea.style.height=adjustedHeight+'px';
 	    	}
+		}
+		function enlarge(button){
+			var title=button.parentElement;
+			var block=title.parentElement;
+			var form=document.getElementsByTagName('form')[0].children;
+
+			if (button.value=='><'){
+				for (var i = 0; i < form.length; i++) {
+    				form[i].style.display="";
+				}
+				button.value='<>';
+				block.style.width='350px';
+				block.style.height='270px';
+			}
+			else{
+				for (var i = 0; i < form.length; i++) {
+    				form[i].style.display="none";
+				}
+				block.style.display='block';
+				button.value='><';
+				block.style.width='90vw';
+				block.style.height='90vh';
+			}
 		}
 	</script>
 

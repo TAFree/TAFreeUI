@@ -8,11 +8,6 @@
 			font-size: 14px;
 			padding:3px;
 		}
-		.MRow{
-			width:100%;
-			margin-left:0px;
-			float:left;
-		}
 		.row{
 			width:100%;
 			margin:7px;
@@ -36,6 +31,11 @@
 			border-bottom:1px solid black;
 			box-sizing: border-box;
 		}
+		input.enlarge{
+			float:right;
+			padding:2px;
+			margin-right:5px;
+		}
 		select{
 			width:80px;
 			float:right;
@@ -46,6 +46,7 @@
 		.code{
 			width:100%;
 			height:90%;
+			padding-left: 3px;
 			box-sizing: border-box;
 			overflow-y:auto;
 			font-size: 16px;
@@ -91,60 +92,64 @@
 		<input type="button" value="Description" class="button">
 		<br>
 
-		<div class="MRow">
-			<div class="block">
-				<div class="title">one.java
-					<select>
-						<option value="blank">blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
+		
+		<div class="block">
+			<div class="title">one.java
+				<select>
+					<option value="blank">blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
 			</div>
-			<div class="block">
-				<div class="title">two.java
-					<select>
-						<option value="blank">blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
-			</div>
-			<div class="block">
-				<div class="title">three.java
-					<select>
-						<option value="blank">blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
-			</div>
-			<div class="block">
-				<div class="title">four.java
-					<select>
-						<option value="blank">blank</option>
-						<option value="lock">lock</option>
-						<option value="unlock">unlock</option>
-						<option value="fuzzy">fuzzy</option>
-					</select>
-				</div>
-				<div class="code">
-					<pre>Code...</pre>
-				</div>
+			<div class="code">
+				<pre>Code...</pre>
 			</div>
 		</div>
+		<div class="block">
+			<div class="title">two.java
+				<select>
+					<option value="blank">blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<pre>Code...</pre>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">three.java
+				<select>
+					<option value="blank">blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<pre>Code...</pre>
+			</div>
+		</div>
+		<div class="block">
+			<div class="title">four.java
+				<select>
+					<option value="blank">blank</option>
+					<option value="lock">lock</option>
+					<option value="unlock">unlock</option>
+					<option value="fuzzy">fuzzy</option>
+				</select>
+				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+			</div>
+			<div class="code">
+				<pre>Code...</pre>
+			</div>
+		</div>
+		
 
 		<div class="row">
 			From&nbsp;<input type="date" class="date">
@@ -191,6 +196,29 @@
 	    	if (adjustedHeight>textarea.clientHeight){
 	        textarea.style.height=adjustedHeight+'px';
 	    	}
+		}
+		function enlarge(button){
+			var title=button.parentElement;
+			var block=title.parentElement;
+			var form=document.getElementsByTagName('form')[0].children;
+
+			if (button.value=='><'){
+				for (var i = 0; i < form.length; i++) {
+    				form[i].style.display="";
+				}
+				button.value='<>';
+				block.style.width='350px';
+				block.style.height='270px';
+			}
+			else{
+				for (var i = 0; i < form.length; i++) {
+    				form[i].style.display="none";
+				}
+				block.style.display='block';
+				button.value='><';
+				block.style.width='90vw';
+				block.style.height='90vh';
+			}
 		}
 	</script>
 
