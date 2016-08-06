@@ -21,12 +21,23 @@
 			font-size: 20px;
 		}
 		.block{
-			width: 350px;
+			width:350px;
 			height:270px;
 			border:1px solid black;
 			float:left;
 			margin:15px;
 			overflow:hidden;
+		}
+		.pickable:hover{
+			background-color:lightskyblue;
+			cursor:pointer;
+		}
+		.cutout{
+    		border-radius:5px;
+    		border:1px dotted linen;
+    		background-color:silver;
+    		color: gray;
+    		cursor:pointer;
 		}
 		.title{
 			width:100%;
@@ -90,7 +101,7 @@
 
 	</style>
 </head>
-<body>
+<body onload="enableUnlock();">
 	
 	<form>
 
@@ -137,7 +148,20 @@
 				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
 			</div>
 			<div class="code">
-				<pre>Code...</pre>
+				<pre>
+import java.util.Scanner;
+
+public class ScannerAndKeyboard
+{
+
+	public static void main(String[] args)
+	{	Scanner s = new Scanner(System.in);
+		System.out.print( "Enter your name: "  );
+		String name = s.nextLine();
+		System.out.println( "Hello " + name + "!" );
+	}
+}
+				</pre>
 			</div>
 		</div>
 		<div class="block">
@@ -178,14 +202,13 @@
 		</div>
 
 		<div class="bottom">
-			<input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Add key&nbsp;&nbsp;&nbsp;&nbsp;" class="button" onclick="confirm('Sure?')">
+			<input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;" class="button" onclick="confirm('Sure?')">
 		</div>
 
 	</form>
 
 	<script>
 		function autogrow(textarea){
-
 			var adjustedHeight=textarea.clientHeight;
 	    	adjustedHeight=Math.max(textarea.scrollHeight,adjustedHeight);
 
@@ -216,7 +239,36 @@
 				block.style.height='90vh';
 			}
 		}
+		function enableUnlock(){ // pass code to split into segments for unlock mode
+			var blocks=document.getElementsByClassName("block");
+			for (var i = 0; i < blocks.length; i++) {
+				var mode=blocks[i].children[0].children[0].value;
+				if(mode=='unlock'){
+					var code=blocks[i].children[1].children[0].innerHTML;
+					blocks[i].children[1].children[0].innerHTML=codeBuilder(code);
+				}
+			}
+		}
+		function codeBuilder(code) { // return code wrapped with pickable tags
+			var lines=code.split('\n');
+			var pickableCode="";
+			for (var i = 0; i < lines.length; i++) {
+				pickableCode+=segmentBuilder(lines[i], 'text', 'pickable');
+			}
+			return pickableCode;
+		}
+		function segmentBuilder(segment, tag, appearance){ // return <tag onclick='switchClass(this);' class='appearance'>segment</tag><br>
+			var pickableSegment="<" + tag +" onclick='switchClass(this);' class='" + appearance + "'>" + segment + "</" + tag +"><br>";
+			return pickableSegment;
+		}
+		function switchClass(tag) { 
+			if (tag.getAttribute('class')=='pickable') {
+				tag.className='cutout';
+			}
+			else if (tag.getAttribute('class')=='cutout') {
+				tag.className='pickable';
+			}
+		}
 	</script>
-
 </body>
 </html>
