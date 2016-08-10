@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  	  	<meta charset="utf-8">
+  	  	<style>
+  	  		/*polygon {
+  	  		fill:gray;*/
+  	  		}
+  	  	</style>
+      	<script>
+      		function formatBuilder(a, b, c) { // return string like "200,10 250,190 160,210"
+      			var points = String(a.x) + "," + String(a.y) + " " + String(b.x) + "," + String(b.y) + " " +String(c.x) + "," + String(c.y);
+      			return points;
+      		}
+        	/*function createPolygon() {
+          		var svgNS = "http://www.w3.org/2000/svg";
+          		var svgEle = document.getElementById("demo");
+          		var polygonEle = document.createElementNS(svgNS, "polygon");
+          		polygonEle.setAttribute("points", formatBuilder({x:200, y:10}, {x:250, y:190}, {x:160, y:210}));
+	    		polygonEle.onclick = function(){window.location.assign("http://www.ntu.edu.tw/");};
+	    		polygonEle.onmouseover = function(){this.style.fill = "silver";};
+	    		polygonEle.onmouseout = function(){this.style.fill = "gray";};
+          		svgEle.appendChild(polygonEle);*/
+              //basic circle
+              var svgNS = "http://www.w3.org/2000/svg";
+              var svgEle = document.getElementById("demo");
+    var circle = makeSVG("circle", {cx:200, cy:200, r:60, stroke:"black", "stroke-width":3, fill:"red"});
+    //three triangles
+    //array poly to input polygons, convenient for using for loop
+    var poly = [];
+    for(var i = 0; i < 3; i++){
+      poly[i] = document.createElementNS(svgNS, "polygon");
+    }
+    //set points
+    poly[0].setAttribute("points", formatBuilder({x:200, y:200}, {x:373, y:300}, {x:27, y:300}));
+    poly[1].setAttribute("points", formatBuilder({x:200, y:200}, {x:200, y:0}, {x:373, y:300}));
+    poly[2].setAttribute("points", formatBuilder({x:200, y:200}, {x:200, y:0}, {x:27, y:300}));
+    //add mouse event, append child
+    for(var i = 0; i < 3; i++){
+      poly[i].onmouseover = function(){circle.style.fill = "#088A29"};
+          poly[i].onmouseout = function(){circle.tstyle.fill = "#F3E2A9"};
+          poly[i].onclick = function(){window.location.assign("http://www.ntu.edu.tw/");};
+          svgEle.appendChild(poly[i]);
+    }
+    svgEle.appendChild(circle);
+        	}
+      	</script>
+        
+  	</head>
+  	<body>
+    	<svg id="demo" width="500" height="500" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+  	</body>
+</html>
