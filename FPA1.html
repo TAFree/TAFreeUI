@@ -1,8 +1,48 @@
 <!DOCTYPE html>
 <head>
 	<style>
+		div.container{
+			width:100%;
+			border: none;
+		}
+		header{
+			padding: 1em;
+			color: white;
+			background-color: #58D3F7;
+			text-align:left;
+		}
+		nav{
+			width:98.5%;
+			margin:0;
+			padding:5px;
+			padding-left: 20px;
+			background-color:#FF8000;
+			color: white;
+		}
+		.main{
+			margin:0;
+			border:none;
+			padding: 10px;
+			overflow: hidden;
+			width:100%;
+		}
+		footer{
+			padding: 5px;
+			height:110px;
+			color:white;
+			background-color: #FF8000;
+			text-align:center;
+			clear:left;
+			top:0px;
+			position:relative;
+			width:99%;
+		}
 		form{
 			margin: 50px;
+			margin-top: 20px;
+		}
+		.box{
+			min-height: 56vh;
 		}
 		input.button{
 			font-size: 14px;
@@ -75,118 +115,137 @@
 		}
 		.bottom{
 			width: 100%;
-			height:100px;
 			text-align:center;
 			position: relative;
 			margin-top: 10px;
 			float:left;
 			line-height: 25px;
 		}
-
+		
 	</style>
 </head>
+
 <body>
-	
-	<form>
+	<div class = "container">
 
-		<input type="button" value="Description" class="button">
-		<br>
+		<header>
+			<h1>TAFree</h1>
+		</header>
 
-		
-		<div class="block">
-			<div class="title">one.java
-				<select>
-					<option value="blank">blank</option>
-					<option value="lock">lock</option>
-					<option value="unlock">unlock</option>
-					<option value="fuzzy">fuzzy</option>
-				</select>
-				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
-			</div>
-			<div class="code">
-				<pre>Code...</pre>
-			</div>
-		</div>
-		<div class="block">
-			<div class="title">two.java
-				<select>
-					<option value="blank">blank</option>
-					<option value="lock">lock</option>
-					<option value="unlock">unlock</option>
-					<option value="fuzzy">fuzzy</option>
-				</select>
-				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
-			</div>
-			<div class="code">
-				<pre>Code...</pre>
-			</div>
-		</div>
-		<div class="block">
-			<div class="title">three.java
-				<select>
-					<option value="blank">blank</option>
-					<option value="lock">lock</option>
-					<option value="unlock">unlock</option>
-					<option value="fuzzy">fuzzy</option>
-				</select>
-				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
-			</div>
-			<div class="code">
-				<pre>Code...</pre>
-			</div>
-		</div>
-		<div class="block">
-			<div class="title">four.java
-				<select>
-					<option value="blank">blank</option>
-					<option value="lock">lock</option>
-					<option value="unlock">unlock</option>
-					<option value="fuzzy">fuzzy</option>
-				</select>
-				<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
-			</div>
-			<div class="code">
-				<pre>Code...</pre>
-			</div>
-		</div>
-		
+		<nav>
+			<p>Hi!</p>
+		</nav>
 
-		<div class="row">
-			From&nbsp;<input type="date" class="date">
-			<input type="number" name="hour" min="0" max="23" value="00">:
-			<input type="number" name="minute" min="0" max="59" value="00">&nbsp;to&nbsp;
-			<input type="date" class="date">
-			<input type="number" name="hour" min="0" max="23" value="23">:
-			<input type="number" name="minute" min="0" max="59" value="59">&nbsp;
-			<input type="button" value="&nbsp;&nbsp;key generate&nbsp;&nbsp;" class="button">
+		<div class="main">
+			<form>
+
+				<div class="box">
+					<input type="button" value="Description" class="button">
+					<br>
+
+					
+					<div class="block">
+						<div class="title">one.java
+							<select>
+								<option value="blank">blank</option>
+								<option value="lock">lock</option>
+								<option value="unlock">unlock</option>
+								<option value="fuzzy">fuzzy</option>
+							</select>
+							<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+						</div>
+						<div class="code">
+							<pre>Code...</pre>
+						</div>
+					</div>
+					<div class="block">
+						<div class="title">two.java
+							<select>
+								<option value="blank">blank</option>
+								<option value="lock">lock</option>
+								<option value="unlock">unlock</option>
+								<option value="fuzzy">fuzzy</option>
+							</select>
+							<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+						</div>
+						<div class="code">
+							<pre>Code...</pre>
+						</div>
+					</div>
+					<div class="block">
+						<div class="title">three.java
+							<select>
+								<option value="blank">blank</option>
+								<option value="lock">lock</option>
+								<option value="unlock">unlock</option>
+								<option value="fuzzy">fuzzy</option>
+							</select>
+							<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+						</div>
+						<div class="code">
+							<pre>Code...</pre>
+						</div>
+					</div>
+					<div class="block">
+						<div class="title">four.java
+							<select>
+								<option value="blank">blank</option>
+								<option value="lock">lock</option>
+								<option value="unlock">unlock</option>
+								<option value="fuzzy">fuzzy</option>
+							</select>
+							<input type="button" value="<>" class="enlarge" onclick="enlarge(this);">
+						</div>
+						<div class="code">
+							<pre>Code...</pre>
+						</div>
+					</div>
+					
+
+					<div class="row">
+						From&nbsp;<input type="date" class="date">
+						<input type="number" name="hour" min="0" max="23" value="00">:
+						<input type="number" name="minute" min="0" max="59" value="00">&nbsp;to&nbsp;
+						<input type="date" class="date">
+						<input type="number" name="hour" min="0" max="23" value="23">:
+						<input type="number" name="minute" min="0" max="59" value="59">&nbsp;
+						<input type="button" value="&nbsp;&nbsp;key generate&nbsp;&nbsp;" class="button">
+					</div>
+
+					<div class="row">
+						<div class="text">
+							<p>
+								From 2016/08/02 00:00 to 2016/08/09 23:59 a12345678<br>From 2016/08/09 00:00 to 2016/08/16 23:59 b12345678
+							</p>
+						</div>
+						<div class="off">
+						&nbsp;&nbsp;without key <input type="text" class="off" value="20">% off
+						</div>
+					</div>
+
+					<div class="row">
+						Backup&nbsp;<input type="date" class="date">
+						<input type="number" name="hour" min="0" max="23" value="00">:
+						<input type="number" name="minute" min="0" max="59" value="00">&nbsp;Appear&nbsp;
+						<input type="date" class="date">
+						<input type="number" name="hour" min="0" max="23" value="23">:
+						<input type="number" name="minute" min="0" max="59" value="59">
+					</div>
+				</div>
+
+				<div class="bottom">
+					<input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;" class="button" onclick="confirm('Sure?')">
+				</div>
+
+			</form>
 		</div>
 
-		<div class="row">
-			<div class="text">
-				<p>
-					From 2016/08/02 00:00 to 2016/08/09 23:59 a12345678<br>From 2016/08/09 00:00 to 2016/08/16 23:59 b12345678
-				</p>
-			</div>
-			<div class="off">
-			&nbsp;&nbsp;without key <input type="text" class="off" value="20">% off
-			</div>
-		</div>
+		<footer>
+			<p>@2016 TAFree project</p>
+			<p>Testing...</p>
+		</footer>
 
-		<div class="row">
-			Backup&nbsp;<input type="date" class="date">
-			<input type="number" name="hour" min="0" max="23" value="00">:
-			<input type="number" name="minute" min="0" max="59" value="00">&nbsp;Appear&nbsp;
-			<input type="date" class="date">
-			<input type="number" name="hour" min="0" max="23" value="23">:
-			<input type="number" name="minute" min="0" max="59" value="59">
-		</div>
-
-		<div class="bottom">
-			<input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;" class="button" onclick="confirm('Sure?')">
-		</div>
-
-	</form>
-
+	</div>
 	<script>
 		function autogrow(textarea){
 
@@ -200,20 +259,23 @@
 		function enlarge(button){
 			var title=button.parentElement;
 			var block=title.parentElement;
-			var form=document.getElementsByTagName('form')[0].children;
+			var box=document.getElementsByClassName('box')[0].children;
+			var bot=document.getElementsByClassName('bottom')[0];
 
 			if (button.value=='><'){
-				for (var i = 0; i < form.length; i++) {
-    				form[i].style.display="";
+				for (var i = 0; i < box.length; i++) {
+    				box[i].style.display="";
 				}
+    			bot.style.display="";
 				button.value='<>';
 				block.style.width='350px';
 				block.style.height='270px';
 			}
 			else{
-				for (var i = 0; i < form.length; i++) {
-    				form[i].style.display="none";
+				for (var i = 0; i < box.length; i++) {
+    				box[i].style.display="none";
 				}
+    			bot.style.display="none";
 				block.style.display='block';
 				button.value='><';
 				block.style.width='90vw';
@@ -221,6 +283,5 @@
 			}
 		}
 	</script>
-
 </body>
 </html>
