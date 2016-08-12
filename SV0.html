@@ -19,6 +19,7 @@
 				<th>Reply</th>
 			</tr>
 			<tr id="send">
+			</tr>
 		</table>
 		<br>
 		<br>
@@ -27,15 +28,16 @@
 		<br>
 		</div>
 		<div id="div02">
-		<script src="SV0getTime.js"></script>
-		<table id="table02" action="action_page.php">
+		<form action="action_page.php">
+		
+		<table id="table02">
 			<tr>
 				<th>Item</th>
 				<th>Reason</th>
 				<th>Expected Deadline</th>
 			</tr>
 			<tr>
-				<td><select name="Lab">
+				<td><select id="lab" name="Lab">
 					<option value="l1">Lab1</option>
 					<option value="l2">Lab2</option>
 					<option value="l3">Lab3</option>
@@ -49,17 +51,46 @@
 					<option value="l11">Lab11</option>
 					<option value="l12">Lab12</option>
 					<option value="l13">Lab13</option></select></td>
-				<td><input type="text"; name="Reason"></td>
-				<td><select name="Time">
-					<script type="text/javascript"; src="SV0getTime.js"></script>
-					</select></td>
+				<td><input id="reason" type="textfield"; name="Reason"></td>
+				<td><input id="time" type="date">
+					<input type="number" name="hour" min="0" max="23" value="00">:
+					<input type="number" name="minute" min="0" max="59" value="00">
+				</td>
 			</tr>
 			<br>
-			<input id="inputsub" type="submit" value="Send">
+			<input id="inputsub" type="button" value="Send" onclick="request()">
 			
 		</table>
-		
-			<script src="SV0.js"></script>
+		</form>
 		</div>
+
+
+		<script>
+			function request(){
+			var elmntLab = document.getElementById("lab");
+			var cloneLab = elmntLab.cloneNode(true);
+			var elmntReason = document.getElementById("reason");
+			var cloneReason = elmntReason.cloneNode();
+			var elmntTime = document.getElementById("time");
+			var cloneTime = elmntTime.cloneNode();
+
+			document.getElementById("table02").innerHTML="";
+
+
+			var table01 =  document.getElementById("table01");
+			var numofRow = table01.rows.length;
+			var row = table01.insertRow(numofRow-1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4 = row.insertCell(3);
+			var cell5 = row.insertCell(4);
+			cell1.appendChild(cloneLab);
+			cell2.appendChild(cloneReason);
+			cell3.appendChild(cloneTime);
+			cell4.innerHTML = "Please wait for reply";
+			cell5.innerHTML = "Please wait for reply";		
+			}	
+		</script>
 	</body>
 </html>
