@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>grade percentage</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styleFPA0&FPM1try.css">	
+</head>
+
+<body>
+	<form action="action_page.php">
+		<div>
+		<table id="table">
+			
+			<tr>
+				<th class="putbutton"><button id="button_add" type="button" value="+"; onclick="add()"><b>+</b></button></th>
+				<th>Name</th>
+				<th>Account</th>
+				<th>Password</th>
+				
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd"><input  id="Name" type="text" value="Name"></td>
+				<td class="tr_odd" ><input  id="Acc" type="text"></td>
+				<td class="tr_odd"><input  id="Psw" type="text"></td>
+				
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd"><input  id="Name" type="text" value="Name"></td>
+				<td class="tr_odd"><input  id="Acc" type="text"></td>
+				<td class="tr_odd"><input  id="Psw" type="text"></td>
+				
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd"><input  id="Name" type="text" value="Name"></td>
+				<td class="tr_odd"><input  id="Acc" type="text"></td>
+				<td class="tr_odd"><input  id="Psw" type="text"></td>
+				
+			</tr>
+				<div id="addrow"></div>
+			<br>
+			<br>
+			<button id="buttonsubmit" type="submit" value="save">save</button>
+		</table>
+		</form>
+		</div>
+
+		<script>
+			function add(){
+				var numofRow = document.getElementById("table").rows.length;
+				/*var elmnt = document.getElementByTagName(tr)[numofRow];
+				var rowClone = elmnt.cloneNode(true);
+				document.getElementById("table").appendChild(rowClone);
+				*/
+				var row = document.getElementById("table").insertRow(numofRow);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				
+				var elmntBtnsub = document.getElementById("button_sub");
+				var cloneBtnsub = elmntBtnsub.cloneNode(true);
+				var elmntName = document.getElementById("Name");
+				var cloneName = elmntName.cloneNode(true);
+				var elmntAcc = document.getElementById("Acc");
+				var cloneAcc = elmntAcc.cloneNode(true);
+				var elmntPsw = document.getElementById("Psw");
+				var clonePsw = elmntPsw.cloneNode(true);
+				cell1.appendChild(cloneBtnsub);
+				cell2.appendChild(cloneName);
+				cell3.appendChild(cloneAcc); 
+				cell4.appendChild(clonePsw); 
+				
+			}
+
+			function sub(button){
+				/*button.parentNode.parentNode.removeChild(button.parentNode);*/
+				button.parentNode.parentNode.parentNode.removeChild(button.parentNode.parentNode);
+				
+
+			}
+		</script>
+</body>
+
+</html>
