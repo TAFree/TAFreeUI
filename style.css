@@ -3,8 +3,9 @@ html, body{
      background-color: #D6E8FC;
  }
 
-h1 {
-     color: #FFF6E5;
+img {
+     width: 300px;
+     height: 200px;
 }
 
 header {
@@ -44,16 +45,29 @@ footer {
 table {
      width: 50%;
      height: 20%;
-     color: #3F464C;
+     font-family: "Times New Roman", serif;
+     font-size: 18px;
 }
 
 a {  
      color: #3F464C;
+     font-family: "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+     font-size: 24px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 500;
+     line-height: 26.4px;
 }
 
 th {
      background-color: #1D75AA;
      color: #FFF6E5;
+     font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+     font-size: 20px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 500;
+     line-height: 26.4px;
 }
 
 .odd {
@@ -73,8 +87,25 @@ table, th, td {
 #textfield {
      margin-left: 45%; 
      margin-top: 1%;
-     
+}
 
+.embed {
+     color: #3F464C;
+     font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+     font-size: 20px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 500;
+     line-height: 26.4px; 
+}
+
+.chinese {
+     font-family: "PMingLiu";
+     font-size: 18px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 500;
+     line-height: 26.4px; 
 }
 
 #button {
@@ -90,8 +121,6 @@ table, th, td {
      -webkit-box-shadow : 0px 1px 3px rgba(0,0,0,1.0);
      -moz-box-shadow : 0px 1px 3px rgba(0,0,0,1.0);
      box-shadow : 0px 1px 3px rgba(0,0,0,1.0);
-     font-size : 15px;
-     color : #696869;
      padding : 1px 17px;
      background : #ffffff;
      background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(49%,#f1f1f1), color-stop(51%,#e1e1e1), color-stop(100%,#f6f6f6));
@@ -101,5 +130,11 @@ table, th, td {
      background : -ms-linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
      background : linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
      filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
-
+     color: #3F464C;
+     font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+     font-size: 20px;
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 500;
+     line-height: 26.4px; 
 }
