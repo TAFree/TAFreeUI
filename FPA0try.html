@@ -8,8 +8,8 @@
 	</head>
 
 	<body>
-		<form action="action_page.php">
 		<div>
+		<form action="action_page.php">
 		<table id="table">
 			<tr>
 				<th class="putbutton"></th>
@@ -42,10 +42,10 @@
 				<td class="tr_odd">Disription</td>
 			</tr>
 			<tr>
-				<td class="putbutton"><button hover="style.visibility= 'visible'"; id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="putbutton"></td>
 				<td class="tr_even"><input id="text" type="text" value=""></td>
 				<td class="tr_even"><input id="file" type="file" value=""></td>
-				<td class="tr_even" rowspan="2"><input type="file" value="discription"></td>
+				<td class="tr_even" rowspan="50" id = "spantd"><input type="file" value="discription"></td>
 			</tr>
 			<tr>
 				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
@@ -55,20 +55,26 @@
 				
 			<br>
 			<br>
-			<button id="buttonsubmit" type="submit" value="save" onclick="confirm('Sure or not?')">save</button>
 		</table>
+		<button id="buttonsubmit" type="submit" value="save" onclick="confirm('Sure or not?')">save</button>
 		</div>
 		</form>
-
+		
 
 		<script>
+		/*function count(){本來要給rowspan用
+			var numofRow = document.getElementById("table").rows.length;
+			return numofRow-2;
+		}*/
+
 		function add(){
-		var numofRow = document.getElementById("table").rows.length;
-		/*var elmnt = document.getElementByTagName(tr)[numofRow];
-		var rowClone = elmnt.cloneNode(true);
-		document.getElementById("table").appendChild(rowClone);
-		*/
-		var row = document.getElementById("table").insertRow(numofRow);
+
+			var numofRow = document.getElementById("table").rows.length;
+			/*var elmnt = document.getElementByTagName(tr)[numofRow];
+			var rowClone = elmnt.cloneNode(true);
+			document.getElementById("table").appendChild(rowClone);
+			*/
+			/*var row = document.getElementById("table").insertRow(numofRow);
 			var cell1 = row.insertCell(0);
 			var cell2 = row.insertCell(1);
 			var cell3 = row.insertCell(2);
@@ -83,9 +89,47 @@
 			cell2.appendChild(cloneText);
 			cell3.appendChild(cloneFile); 
 			cell4.innerHTML = "style.background-color='lightblue'";
-			
-		}
-		//底色的問題應該是要再create或clone td
+			*/
+
+			var row = document.getElementById("table").insertRow(numofRow);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			//var cell4 = row.insertCell(3);
+
+
+			if(numofRow%2==1){
+				cell2.setAttribute("class","tr_odd");
+				cell3.setAttribute("class","tr_odd");
+				//cell4.setAttribute("class","tr_even");
+			}
+			else{
+				cell2.setAttribute("class","tr_even");
+				cell3.setAttribute("class","tr_even");
+				//cell4.setAttribute("class","tr_even");
+			}
+
+			var btnSub = document.createElement("button");
+			btnSub.setAttribute("type","button");
+			btnSub.appendChild(document.createTextNode("-"));
+			btnSub.setAttribute("onclick","sub(this)");
+
+			var tetCla = document.createElement("input");
+			tetCla.setAttribute("type","text");
+
+			var choFle = document.createElement("input");
+			choFle.setAttribute("type","file");
+
+			cell1.appendChild(btnSub);
+			cell2.appendChild(tetCla);
+			cell3.appendChild(choFle);
+			//cell4.style.background-color = "lightblue";
+
+
+
+
+			}
+		
 		function sub(button){
 			/*button.parentNode.parentNode.removeChild(button.parentNode);*/
 			button.parentNode.parentNode.parentNode.removeChild(button.parentNode.parentNode);

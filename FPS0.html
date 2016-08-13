@@ -82,8 +82,9 @@
 				<div id="addrow"></div>
 			<br>
 			<br>
-			<button id="buttonsubmit" type="submit" value="save">save</button>
+			
 		</table>
+		<button id="buttonsubmit" type="submit" value="save">save</button>
 		</form>
 		</div>
 
@@ -92,10 +93,8 @@
 		<script>
 			function add(){
 				var numofRow = document.getElementById("table").rows.length;
-				/*var elmnt = document.getElementByTagName(tr)[numofRow];
-				var rowClone = elmnt.cloneNode(true);
-				document.getElementById("table").appendChild(rowClone);
-				*/
+				
+				//產生像空間的東西
 				var row = document.getElementById("table").insertRow(numofRow);
 				var cell1 = row.insertCell(0);
 				var cell2 = row.insertCell(1);
@@ -103,6 +102,7 @@
 				var cell4 = row.insertCell(3);
 				var cell5 = row.insertCell(4);
 
+				//背景顏色
 				if(numofRow%2==1){
 					cell2.setAttribute('class','tr_odd');
 					cell3.setAttribute('class','tr_odd');
@@ -116,32 +116,33 @@
 					cell5.setAttribute('class','tr_even');
 				}
 
+				//開始產生所需的element,並加上功能
 				var btnSub = document.createElement("button");
 				btnSub.setAttribute("type","button");//default可能是submit, 所以要specify
 				btnSub.appendChild(document.createTextNode("-"));
 				btnSub.setAttribute("onclick" , "sub(this)");//要這樣,不能直接btnSub.onclick=sub(this)
 
 				var selItm = document.createElement("select");
-				selItm.setAttribute("select","sItm");
+				selItm.setAttribute("select","sItm");// 不確定需不需要set這個attribute
 				var selItmOpt1 = document.createElement("option");
 				var selItmOpt2 = document.createElement("option");
 				var selItmOpt3 = document.createElement("option");
 				var selItmOpt4 = document.createElement("option");
-				selItmOpt1.setAttribute("option","Lab");// 不確定需不需要set這個attribute
+				/*selItmOpt1.setAttribute("option","Lab");// 不確定需不需要set這個attribute
 				selItmOpt1.appendChild(document.createTextNode("Lab"));
 				selItmOpt2.setAttribute("option","Qz");
 				selItmOpt2.appendChild(document.createTextNode("Quiz"));
 				selItmOpt3.setAttribute("option","Mid");
 				selItmOpt3.appendChild(document.createTextNode("Midterm"));
 				selItmOpt4.setAttribute("option","Fin");
-				selItmOpt4.appendChild(document.createTextNode("Final"));
+				selItmOpt4.appendChild(document.createTextNode("Final"));*/
 				selItm.appendChild(selItmOpt1);
 				selItm.appendChild(selItmOpt2);
 				selItm.appendChild(selItmOpt3);
 				selItm.appendChild(selItmOpt4);
 
 				var texta = document.createElement("input");
-				texta.setAttribute("text","txta");
+				texta.setAttribute("text","txta");//同value只會顯示一個,所以要create兩個text？
 				var textb = document.createElement("input");
 				textb.setAttribute("text","txtb");
 				
