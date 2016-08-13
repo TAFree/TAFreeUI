@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		html,body{
+			height:100%;
+		}
+		div.container{
+			width:100%;
+			height:100%;
+			border: none;
+		}
+		header{
+			padding: 1em;
+			color: white;
+			background-color: #58D3F7;
+			text-align:left;
+		}
+		nav{
+			width:99%;
+			margin:0;
+			padding:5px;
+			padding-left: 20px;
+			background-color:#FF8000;
+			color: white;
+		}
+		.main{
+			margin:0;
+			border:none;
+			padding: 10px;
+			overflow: hidden;
+			width:99%;
+			height: 67%;
+		}
+		#lab1{
+			display:none;
+		}
+		#lab3{
+			display: none;
+		}
+		footer{
+			padding: 5px;
+			height:110px;
+			color:white;
+			background-color: #FF8000;
+			text-align:center;
+			clear:left;
+			top:0;
+			position:relative;
+			width:99%;
+		}
+		.block{
+			float: left;
+			text-align:center;
+			height: 100%;
+			width:33%;
+		}
+		svg{
+			position: relative;
+			top:50%;
+			left:50%;
+			margin:-200px 0 0 -200px;
+		}
+		table{
+	      	position:relative;
+	      	top:50%;
+	      	left:50%;
+	      	margin:-150px 0 0 -150px;
+	      	width:300px;
+	      	height:300px;
+	      	border-collapse: collapse;
+	    }
+	    th, td{
+	      	border: 1px solid black;
+	      	border-collapse: collapse;
+	     	padding:5px;
+	    }
+	    .lab2{
+	    	display: none;
+	    }
+	    .lab3{
+	    	display: none;
+	    }
+	    .check{
+	      	text-align: center;
+	      	width:30px;
+	    }
+	    .title{
+	      	text-align: center;
+	      	top:50%;
+	      	left:50%;
+	      	margin:;
+	      	height:70px;
+	      	width:300px;
+	      	border: 1px solid black;
+	    }
+	    .number{
+	      	text-align: center;
+	      	width:100px;
+	    }
+	    #score{
+	     	text-align: center;
+	      	font-size:2.5em;
+	    }
+	    #noCount{
+	      	border:3px solid black;
+	      	background-color: #CEF6D8;
+	    }
+	    #noKey{
+	      	border:3px solid black;
+	      	background-color:#F78181;
+	    }
+	    #complete{
+	      	border: 3px solid black;
+	    }
+	</style>
+
+</head>
+
+<body onload="createPolygon()">
+	<div class = "container">
+
+		<header>
+			<h1>TAFree</h1>
+		</header>
+
+		<nav>
+			<p>Hi!</p>
+		</nav>
+
+		<div class="main">
+			<div class="block">
+				<table id = "noCount">
+	    	    	<tr>
+		               	<th id = "title" colspan = "3">Lab
+		                  <select id="select1" onchange="changeSelect()">
+		                     <option value = "lab01">01</option>
+		                     <option value = "lab02">02</option>
+		                     <option value = "lab03">03</option>
+		                  </select>
+		                </th>
+		            </tr>
+		            <tr class="lab lab1">
+		                <td class = "number">Problem 1</th>
+		                <td class = "check">&#9989;</td>
+		                <td id = "score" rowspan="4">90</th>
+		            </tr>
+		            <tr class="lab lab1">
+		                <td class = "number">Problem 2</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab1">
+		                <td class = "number">Problem 3</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab1">
+		                <td class = "number">Problem 4</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab2">
+		                <td class = "number">Problem 21</th>
+		                <td class = "check">&#9989;</td>
+		                <td id = "score" rowspan="4">20</th>
+		            </tr>
+		            <tr class="lab lab2">
+		                <td class = "number">Problem 22</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab2">
+		                <td class = "number">Problem 23</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab2">
+		                <td class = "number">Problem 24</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab3">
+		                <td class = "number">Problem 31</th>
+		                <td class = "check">&#9989;</td>
+		                <td id = "score" rowspan="4">30</th>
+		            </tr>
+		            <tr class="lab lab3">
+		                <td class = "number">Problem 32</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab3">
+		                <td class = "number">Problem 33</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		            <tr class="lab lab3">
+		                <td class = "number">Problem 3</th>
+		                <td class = "check">&#9989;</td>
+		            </tr>
+		    	</table>
+			</div>
+			<div class="block">
+				<table id = "noKey">
+    				<tr>
+	         			<th id = "title" colspan = "3">
+				             <select id="select2">
+				               <option value = "1">Quiz1</option>
+				               <option value = "2">Quiz2</option>
+				               <option value = "3">Midterm</option>
+				             </select>
+			          	</th>
+			        </tr>
+			        <tr>
+			          <td class = "number">Problem 1</th>
+			          <td class = "check">&#9989;</td>
+			          <td id = "score" rowspan="4">90</th>
+			        </tr>
+			        <tr>
+			          <td class = "number">Problem 2</th>
+			          <td class = "check">&#9989;</td>
+			        </tr>
+			        <tr>
+			          <td class = "number">Problem 3</th>
+			          <td class = "check">&#9989;</td>
+			        </tr>
+			        <tr>
+			          <td class = "number">Problem 4</th>
+			          <td class = "check">&#9989;</td>
+			        </tr>
+    			</table>
+			</div>
+			<div class="block">
+		    	<table id = "complete">
+			        <tr>
+			          <th id = "title" colspan = "3">total</th>
+			        </tr>
+			        <tr>
+			          <td class = "number">Lab</th>
+			          <td class = "check">20%</td>
+			          <td id = "score" rowspan="4">90</th>
+			        </tr>
+			        <tr>
+			          <td class = "number">Quiz</th>
+			          <td class = "check">40%</td>
+			        </tr>
+			        <tr>
+			          <td class = "number">Midterm</th>
+			          <td class = "check">20%</td>
+			        </tr>
+			        <tr>
+			          <td class = "number">Final</th>
+			          <td class = "check">30%</td>
+			        </tr>
+			     </table>
+			</div>
+		</div>
+
+		<footer>
+			<p>@2016 TAFree project</p>
+			<p>Testing...</p>
+		</footer>
+
+	</div>
+
+	<script type="text/javascript">
+		function changeSelect(){
+			var val=document.getElementById('select1').value;
+			var sele=document.getELementsByClass(val);
+			var lab=document.getELementsByClass('lab');
+			for(var i=0;i<lab.length;i++){
+				var l=lab[i];
+				l.style.display='none';
+			}
+			for(var i=0;i<sele.length;i++){
+				var s=sele[i];
+				s.style.display='block';
+			}
+		}
+	</script>
+</body>
+</html>
