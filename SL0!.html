@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		html,body{
+			height:100%;
+		}
+		div.container{
+			width:100%;
+			height:100%;
+			border: none;
+		}
+		header{
+			padding: 1em;
+			color: white;
+			background-color: #58D3F7;
+			text-align:left;
+		}
+		nav{
+			width:99%;
+			margin:0;
+			padding:5px;
+			padding-left: 20px;
+			background-color:#FF8000;
+			color: white;
+		}
+		.main{
+			margin:0;
+			border:none;
+			padding: 10px;
+			overflow: hidden;
+			width:100%;
+			height: 60%;
+		}
+		#lab1{
+			display:none;
+		}
+		#lab3{
+			display: none;
+		}
+		footer{
+			padding: 5px;
+			height:110px;
+			color:white;
+			background-color: #FF8000;
+			text-align:center;
+			clear:left;
+			top:0;
+			position:relative;
+			width:99%;
+		}
+		.lr{
+			float: left;
+			text-align:center;
+			height: 100%;
+			width:25%;
+		}
+		.mid{
+			float: left;
+			height:100%;
+			width:50%;
+		}
+		svg{
+			position: relative;
+			top:50%;
+			left:50%;
+			margin:-200px 0 0 -200px;
+		}
+		input.button{
+			font-size: 16px;
+			top:40%;
+			position: relative;
+		}
+		input[name="pre"]{
+			display:;
+		}
+		
+	</style>
+
+	<script type="text/javascript" src = "SVG.js"></script>
+
+</head>
+
+<body onload="createPolygon()">
+	<div class = "container">
+
+		<header>
+			<h1>TAFree</h1>
+		</header>
+
+		<nav>
+			<p>Hi!</p>
+		</nav>
+
+		<div class="main">
+			<div class="lr">
+				<input type="button" value="<<pre" class="button" name="pre" onclick="pre()">
+			</div>
+			<div class="mid" id="lab1">
+				<svg id = "Lab" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+			</div>
+			<div class="mid" id="lab2">
+				<svg id = "Lab" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+			</div>
+			<div class="mid" id="lab3">
+				<svg id = "Lab" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+			</div>
+			<div class="lr">
+				<input type="button" value="next>>" class="button" name="next" onclick="next()">
+			</div>
+		</div>
+
+		<footer>
+			<p>@2016 TAFree project</p>
+			<p>Testing...</p>
+		</footer>
+
+	</div>
+
+	<script type="text/javascript">
+		function pre(){
+			if(document.getElementById("lab2").style.display!='none'){
+				document.getElementById("lab1").style.display="block";
+				document.getElementById("lab2").style.display="none";
+			}
+			else if(document.getElementById("lab3").style.display!='none'){
+				document.getElementById("lab2").style.display="block";
+				document.getElementById("lab3").style.display="none";
+			}
+		}
+		function next(){
+			if(document.getElementById("lab1").style.display!='none'){
+				document.getElementById("lab2").style.display="block";
+				document.getElementById("lab1").style.display="none";
+			}
+			else if(document.getElementById("lab2").style.display!='none'){
+				document.getElementById("lab3").style.display="block";
+				document.getElementById("lab2").style.display="none";
+			}
+		}
+	</script>
+
+</body>
+</html>
