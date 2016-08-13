@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Approval</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styleFSL.css">
+</head>
+
+<body>
+	<table id="table_forstu">
+		<tr>
+			<th>Name</th>
+			<th>Account</th>
+			<th>Item</th>
+			<th>Reason</th>
+			<th>Expected Deadline</th>
+			<th>Allowed Deadline</th>
+			<th>Reply</th>
+		</tr>
+	</table>
+	<form action="action_page.php">
+	<table id="table_forme">
+		<tr>
+			<th>Name</th>
+			<th>Account</th>
+			<th>Item</th>
+			<th>Reason</th>
+			<th>Expected Deadline</th>
+			<th class= "alwdate">Allowed Deadline</th>
+			<th class="reply">Reply</th>
+		</tr>
+		<tr id="tr_odd">
+			<td>jklkj</td>
+			<td>b12345</td>
+			<td>lab</td>
+			<td>kjha;;kj</td>
+			<td>adfgsf</td>
+			<td>
+				<input type ="radio" name="date1" value="alwdate"><input type="date" value="date">
+				<input type = "radio" name="date1" value="ign">&nbspignore
+			</td>
+			<td>
+				<div id="div_apprornot"><input type="radio" name="apr1" value="Appr">&nbspApprove
+				<br>
+				<input type="radio" name="apr1" value="De">&nbspDeny
+				</div>
+			</td>
+		</tr>
+		<tr id="tr_even">
+			<td>sdfgsd</td>
+			<td>b3454352</td>
+			<td>mid</td>
+			<td>sdfgs</td>
+			<td>sdfg</td>
+			<td><input type ="radio" name="date2" value="alwdate"><input type="date" value="date">
+				<input type = "radio" name="date2" value="ign">&nbspignore
+			</td>
+			<td>
+				<div id="div_apprornot"><input type="radio" name="apr2" value="Appr">&nbspApprove
+				<br>
+				<input type="radio" name="apr2" value="De">&nbspDeny
+				</div>
+			</td>
+		</tr>
+		<tr id="tr_odd">
+			<td>sftgh</td>
+			<td>dfgh</td>
+			<td>b5462</td>
+			<td>dfgh</td>
+			<td>dfghd</td>
+			<td><input type ="radio" name="date3" value="alwdate"><input type="date" value="date">
+				<input type = "radio" name="date3" value="ign">&nbspignore
+			</td>
+			<td>
+				<div id="div_apprornot"><input type="radio" name="apr3" value="Appr">&nbspApprove
+				<br>
+				<input type="radio" name="apr3" value="De">&nbspDeny
+				</div>
+			</td>
+		</tr>
+	</table>
+	</form>
+	
+	<!--<input type="button" name="send" value="send" class="btnsend" onclick="send()">-->
+	<button class="btnsend" type="buton" value="send" onclick="myFunction()">send</button>
+
+
+
+
+
+	<script>		
+	function myFunction() {
+		 	
+   			
+				/*讓下面的列全部加到上面
+				var numofRowstu = document.getElementById("table_forstu").rows.length;
+				var numofRowme = document.getElementById("table_forme").rows.length;}
+				/*for(i=(numofRowstu-1)*7+1 ; i<(numofRowstu+numofRowme-2)*7 ; i+7){*/
+						/*var elmntName = document.getElementByTagName("td")[i];
+						var cloneName = elmntLab.cloneNode(true);
+						var elmntAccount = document.getElementByTagName("td")[i+1];
+						var cloneAccount = elmntReason.cloneNode(true);
+						var elmntItem = document.getElementByTagName("td")[i+2];
+						var cloneItem = elmntTime.cloneNode(true);
+						var elmntReason = document.getElementByTagName("td")[i+3];
+						var cloneReason = elmntLab.cloneNode(true);
+						var elmntExpdate = document.getElementByTagName("td")[i+4];
+						var cloneExpdate = elmntLab.cloneNode(true);
+						var elmntAlwdate = document.getElementByTagName("td")[i+5];
+						var cloneAlwdate = elmntLab.cloneNode(true);
+						var elmntReply = document.getElementByTagName("td")[i+6];
+						var cloneReply = elmntLab.cloneNode(true);
+
+						
+
+						var row = document.getElementById("table_forstu").insertRow(numofRowstu-1);
+						var cell1 = row.insertCell(0);
+						var cell2 = row.insertCell(1);
+						var cell3 = row.insertCell(2);
+						var cell4 = row.insertCell(3);
+						var cell5 = row.insertCell(4);
+						var cell6 = row.insertCell(5);
+						var cell7 = row.insertCell(6);
+						cell1.appendChild(cloneName);
+						cell2.appendChild(cloneAccount);
+						cell3.appendChild(cloneItem);
+						cell4.appendChild(cloneReason);
+						cell5.appendChild(cloneExpdate);
+						cell6.appendChild(cloneAlwdate);
+						cell7.appendChild(cloneReply);	
+						}*/
+					}
+		</script>
+</body>
+
+</html>
