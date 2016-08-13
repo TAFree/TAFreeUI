@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table{
+      	position:relative;
+      	width:300px;
+      	height:300px;
+      	border-collapse: collapse;
+      }
+      th, td{
+      	border: 1px solid black;
+      	border-collapse: collapse;
+      	padding:5px;
+      }
+      .check{
+      	text-align: center;
+      	width:30px;
+      }
+      #title{
+      	text-align: center;
+      }
+      .number{
+      	text-align: right;
+      	width:100px;
+      }
+      #score{
+      	text-align: center;
+      	font-size:2.5em;
+      }
+      #noCount{
+      	border:3px solid black;
+      	background-color: #CEF6D8;
+
+      }
+      #noKey{
+      	border:3px solid black;
+      	background-color:#F78181;
+      }
+      #complete{
+      	border: 3px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div >
+      <table id = "complete">
+        <tr>
+          <th id = "title" colspan = "3">Final</th>
+        </tr>
+        <tr>
+          <th class = "number">Problem 1</th>
+          <td class = "check">&#9989;</td>
+          <th id = "score" rowspan="4">90</th>
+        </tr>
+        <tr>
+          <th class = "number">Problem 2</th>
+          <td class = "check">&#9989;</td>
+        </tr>
+        <tr>
+          <th class = "number">Problem 3</th>
+          <td class = "check">&#9989;</td>
+        </tr>
+        <tr>
+          <th class = "number">Problem 4</th>
+          <td class = "check">&#9989;</td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <div>
+    	<table id = "noKey">
+    	<tr>
+          <th id = "title" colspan = "3">Quiz
+             <select>
+               <option value = "1">01</option>
+               <option value = "2">02</option>
+               <option value = "3">03</option>
+             </select>
+          </th>
+        </tr>
+        <tr>
+          <th class = "number">Problem 1</th>
+          <td class = "check">&#9989;</td>
+          <th id = "score" rowspan="4">90</th>
+        </tr>
+        <tr>
+          <th class = "number">Problem 2</th>
+          <td class = "check">&#9989;</td>
+        </tr>
+        <tr>
+          <th class = "number">Problem 3</th>
+          <td class = "check">&#9989;</td>
+        </tr>
+        <tr>
+          <th class = "number">Problem 4</th>
+          <td class = "check">&#9989;</td>
+        </tr>
+    	</table>
+    </div>
+    <br>
+    <div>
+    	<table id = "noCount">
+    	    <tr>
+               <th id = "title" colspan = "3">Lab
+                  <select>
+                     <option value = "1">01</option>
+                     <option value = "2">02</option>
+                     <option value = "3">03</option>
+                  </select>
+                </th>
+            </tr>
+            <tr>
+                <th class = "number">Problem 1</th>
+                <td class = "check">&#9989;</td>
+                <th id = "score" rowspan="4">90</th>
+            </tr>
+            <tr>
+                <th class = "number">Problem 2</th>
+                <td class = "check">&#9989;</td>
+            </tr>
+            <tr>
+                <th class = "number">Problem 3</th>
+                <td class = "check">&#9989;</td>
+            </tr>
+            <tr>
+                <th class = "number">Problem 4</th>
+                <td class = "check">&#9989;</td>
+            </tr>
+    	</table>
+    </div>
+  </body>
+</html>
