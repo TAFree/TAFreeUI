@@ -7,6 +7,8 @@
 </head>
 
 <body>
+
+
 	<div>
 	<form action="action_page.php">
 		<table id="table">
@@ -85,7 +87,13 @@
 		</form>
 		</div>
 
+		
+
 		<script>
+			function sub(button){
+				/*button.parentNode.parentNode.removeChild(button.parentNode);*/
+				button.parentNode.parentNode.parentNode.removeChild(button.parentNode.parentNode);
+			}
 			function add(){
 				var numofRow = document.getElementById("table").rows.length;
 				/*var elmnt = document.getElementByTagName(tr)[numofRow];
@@ -98,7 +106,34 @@
 				var cell3 = row.insertCell(2);
 				var cell4 = row.insertCell(3);
 				var cell5 = row.insertCell(4);
-				var elmntBtnsub = document.getElementById("button_sub");
+
+				if(numofRow%2==0){
+					cell2.setAttribute('class','tr_odd');
+					cell3.setAttribute('class','tr_odd');
+					cell4.setAttribute('class','tr_odd');
+					cell5.setAttribute('class','tr_odd');
+				}
+				else{
+					cell2.setAttribute('class','tr_even');
+					cell3.setAttribute('class','tr_even');
+					cell4.setAttribute('class','tr_even');
+					cell5.setAttribute('class','tr_even');
+				}
+
+				var btnSub = document.createElement("button");
+				var text = document.createElement("input");
+				var selProf = document.createElement("select");
+				//btnSub.onclick = sub(this);
+				text.setAttribute("text","txt");
+				
+				//selectProf.setAttribute("option","David","Patrick","Albert");
+				cell1.appendChild(btnSub);
+				cell2.appendChild(selectProf);
+				cell3.appendChild(text); 
+				cell4.appendChild(Text2); 
+				cell5.appendChild(selectProf);
+
+				/*var elmntBtnsub = document.getElementById("button_sub");
 				var cloneBtnsub = elmntBtnsub.cloneNode(true);
 				var elmntItem = document.getElementById("selectItem");
 				var cloneItem = elmntItem.cloneNode(true);
@@ -112,7 +147,8 @@
 				cell2.appendChild(cloneItem);
 				cell3.appendChild(cloneText1); 
 				cell4.appendChild(cloneText2); 
-				cell5.appendChild(clonePro);
+				cell5.appendChild(clonePro);*/
+				
 			}
 
 			function sub(button){
