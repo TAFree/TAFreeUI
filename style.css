@@ -1,0 +1,105 @@
+html, body{
+     height: 100%;
+     background-color: #D6E8FC;
+ }
+
+h1 {
+     color: #FFF6E5;
+}
+
+header {
+     background-color: #2186C4;
+     padding: 20px;
+     width: 100%;
+}
+
+nav {
+     background-color: #FFF6E5;
+     padding: 5px;
+     width: 100%;
+     color: #3F464C;
+}
+
+content {
+     padding: 5px;
+     width: 100%;
+     height: 80%;
+}
+
+footer {
+     position: absolute;
+     bottom: 0;
+     padding:20px;
+     width: 100%;
+     background-color: #2186C4;
+     text-align: center;
+     color: #FFF6E5;
+}
+
+#table {
+     margin-left: 30%; 
+     margin-top: 15%;
+}
+
+table {
+     width: 50%;
+     height: 20%;
+     color: #3F464C;
+}
+
+a {  
+     color: #3F464C;
+}
+
+th {
+     background-color: #1D75AA;
+     color: #FFF6E5;
+}
+
+.odd {
+     background-color: #FFF6E5;
+     color: #000000;
+}
+
+.even {
+     background-color: #3195C4;
+     color: #FFF6E5;
+}
+
+table, th, td {
+   text-align: center;
+}
+
+#textfield {
+     margin-left: 45%; 
+     margin-top: 1%;
+     
+
+}
+
+#button {
+     margin-left: 46.5%; 
+     margin-top: 5%;
+
+}
+
+.send {
+     border : solid 1px #e6e6e6;
+     border-radius : 3px;
+     moz-border-radius : 3px;
+     -webkit-box-shadow : 0px 1px 3px rgba(0,0,0,1.0);
+     -moz-box-shadow : 0px 1px 3px rgba(0,0,0,1.0);
+     box-shadow : 0px 1px 3px rgba(0,0,0,1.0);
+     font-size : 15px;
+     color : #696869;
+     padding : 1px 17px;
+     background : #ffffff;
+     background : -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(49%,#f1f1f1), color-stop(51%,#e1e1e1), color-stop(100%,#f6f6f6));
+     background : -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
+     background : -webkit-linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
+     background : -o-linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
+     background : -ms-linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
+     background : linear-gradient(top, #ffffff 0%, #f1f1f1 49%, #e1e1e1 51%, #f6f6f6 100%);
+     filter : progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
+
+}
