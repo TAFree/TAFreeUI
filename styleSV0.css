@@ -1,26 +1,32 @@
-
-#div01{
+div{
 	position: absolute;
-   	left:15%;
-    top: 30%;
-    width: 100%;
-    text-align:center;
-	}
-#div02{
-	position: absolute;
-   	left:20%;
-    top: 40%;
-    width: 100%;
-    text-align:center;
-	}
-#table01 {
-	border-collapse: collapse;
+	float: left;
+	top:30%;
+	left:5%;
+	width:90%;
+	height:300pt; 
+}
+form{
+	position: relative;
+	top: 10pt;
+	
+}
+#table_01{
+	position:relative;
+	top:10pt;
+	left:10%;
 	width:70%;
-
+	border-size:0.5pt;
+	text-align: center;
 	}
-#table02{
-	border-collapse: collapse;
-	width:60%;
+#table_02{
+	position: relative;
+	top: 50pt;
+	left: 25%;/*少分號
+	*/
+	width:40%;
+	border-size:0.5pt;
+	text-align: center;
 }
 th {
 	background-color:DarkTurquoise;
@@ -34,8 +40,8 @@ td {
 	font-family:Arial;
 	}
 #inputsub{
-	position: absolute;
-	left:30%;
-	top:120%;
+	position: relative;
+	left:50%;
+	top:300pt;
 }
 		

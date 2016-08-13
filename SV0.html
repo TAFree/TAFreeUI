@@ -9,8 +9,8 @@
 	</head>
 	
 	<body>
-		<div id="div01">
-		<table id="table01">
+		<div>
+		<table id="table_01">
 			<tr>
 				<th>Item</th>
 				<th>Reason</th>
@@ -26,11 +26,11 @@
 		<br>
 		<br>
 		<br>
-		</div>
-		<div id="div02">
+		
+
 		<form action="action_page.php">
 		
-		<table id="table02">
+		<table id="table_02">
 			<tr>
 				<th>Item</th>
 				<th>Reason</th>
@@ -58,26 +58,24 @@
 				</td>
 			</tr>
 			<br>
-			<input id="inputsub" type="button" value="Send" onclick="request()">
+			
 			
 		</table>
 		</form>
+		<input id="inputsub" type="button" value="Send" onclick="request()">
 		</div>
 
 
 		<script>
 			function request(){
-			var elmntLab = document.getElementById("lab");
+			/*var elmntLab = document.getElementById("lab");
 			var cloneLab = elmntLab.cloneNode(true);
 			var elmntReason = document.getElementById("reason");
 			var cloneReason = elmntReason.cloneNode();
 			var elmntTime = document.getElementById("time");
-			var cloneTime = elmntTime.cloneNode();
+			var cloneTime = elmntTime.cloneNode();*/
 
-			document.getElementById("table02").innerHTML="";
-
-
-			var table01 =  document.getElementById("table01");
+			var table01 =  document.getElementById("table_01");
 			var numofRow = table01.rows.length;
 			var row = table01.insertRow(numofRow-1);
 			var cell1 = row.insertCell(0);
@@ -85,9 +83,9 @@
 			var cell3 = row.insertCell(2);
 			var cell4 = row.insertCell(3);
 			var cell5 = row.insertCell(4);
-			cell1.appendChild(cloneLab);
-			cell2.appendChild(cloneReason);
-			cell3.appendChild(cloneTime);
+			cell1.innerHTML = "Please wait for reply";
+			cell2.innerHTML = "Please wait for reply";
+			cell3.innerHTML = "Please wait for reply";
 			cell4.innerHTML = "Please wait for reply";
 			cell5.innerHTML = "Please wait for reply";		
 			}	
