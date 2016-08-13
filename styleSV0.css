@@ -1,0 +1,47 @@
+div{
+	position: absolute;
+	float: left;
+	top:30%;
+	left:5%;
+	width:90%;
+	height:300pt; 
+}
+form{
+	position: relative;
+	top: 10pt;
+	
+}
+#table_01{
+	position:relative;
+	top:10pt;
+	left:10%;
+	width:70%;
+	border-size:0.5pt;
+	text-align: center;
+	}
+#table_02{
+	position: relative;
+	top: 50pt;
+	left: 25%;/*少分號
+	*/
+	width:40%;
+	border-size:0.5pt;
+	text-align: center;
+}
+th {
+	background-color:DarkTurquoise;
+	color:white;
+	font-family: Verdana;
+	text-align: center;
+	}
+td {
+	background-color:LightBlue;
+	color:black;
+	font-family:Arial;
+	}
+#inputsub{
+	position: relative;
+	left:50%;
+	top:300pt;
+}
+		

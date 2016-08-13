@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>grade percentage</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styleFPA0&FPM1try.css">	
+</head>
+
+<body>
+
+
+	<div>
+	<form action="action_page.php">
+		<table id="table">
+			<tr>
+				<th class="putbutton"><button id="button_add" type="button" value="+"; onclick="add()"><b>+</b></button></th>
+				<th>Item</th>
+				<th>No.</th>
+				<th>%</th>
+				<th>Manager</th>
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd">
+					<select id="selectItem" name="Lab">
+					<option value="l1">Lab</option>
+					<option value="qu">Quiz</option>
+					<option value="mid">Midterm</option>
+					<option value="fin">Final</option>
+					</select>
+				</td>
+				<td class="tr_odd"> &nbsp<input id="text1" type="text"></td>
+				<td class="tr_odd"> &nbsp<input id="text2" type="text"></td>
+				<td class="tr_odd">
+					<select id="selectPro" name="pro">
+					<option value="p1">David</option>
+					<option value="p2">Patrick</option>
+					<option value="p3">Albert</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_even">
+					<select name="Lab">
+					<option value="l1">Lab</option>
+					<option value="qu">Quiz</option>
+					<option value="mid">Midterm</option>
+					<option value="fin">Final</option>
+					</select>
+				</td>
+				<td class="tr_even"> &nbsp<input type="text"></td>
+				<td class="tr_even"> &nbsp<input type="text"></td>
+				<td class="tr_even">
+					<select name="pro">
+					<option value="p1">David</option>
+					<option value="p2">Patrick</option>
+					<option value="p3">Albert</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd">
+					<select name="Lab">
+					<option value="l1">Lab</option>
+					<option value="qu">Quiz</option>
+					<option value="mid">Midterm</option>
+					<option value="fin">Final</option>
+					</select>
+				</td>
+				<td class="tr_odd"> &nbsp<input type="text"></td>
+				<td class="tr_odd"> &nbsp<input type="text"></td>
+				<td class="tr_odd">
+					<select name="pro">
+					<option value="p1">David</option>
+					<option value="p2">Patrick</option>
+					<option value="p3">Albert</option>
+					</select>
+				</td>
+			</tr>
+				<div id="addrow"></div>
+			<br>
+			<br>
+			
+		</table>
+		<button id="buttonsubmit" type="submit" value="save">save</button>
+		</form>
+		</div>
+
+		
+
+		<script>
+			function add(){
+				var numofRow = document.getElementById("table").rows.length;
+				
+				//產生像空間的東西
+				var row = document.getElementById("table").insertRow(numofRow);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				var cell5 = row.insertCell(4);
+
+				//背景顏色
+				if(numofRow%2==1){
+					cell2.setAttribute('class','tr_odd');
+					cell3.setAttribute('class','tr_odd');
+					cell4.setAttribute('class','tr_odd');
+					cell5.setAttribute('class','tr_odd');
+				}
+				else{
+					cell2.setAttribute('class','tr_even');
+					cell3.setAttribute('class','tr_even');
+					cell4.setAttribute('class','tr_even');
+					cell5.setAttribute('class','tr_even');
+				}
+
+				//開始產生所需的element,並加上功能
+				var btnSub = document.createElement("button");
+				btnSub.setAttribute("type","button");//default可能是submit, 所以要specify
+				btnSub.appendChild(document.createTextNode("-"));
+				btnSub.setAttribute("onclick" , "sub(this)");//要這樣,不能直接btnSub.onclick=sub(this)
+
+				var selItm = document.createElement("select");
+				selItm.setAttribute("select","sItm");
+				var selItmOpt1 = document.createElement("option");
+				var selItmOpt2 = document.createElement("option");
+				var selItmOpt3 = document.createElement("option");
+				var selItmOpt4 = document.createElement("option");
+				selItmOpt1.setAttribute("option","Lab");
+				selItmOpt1.appendChild(document.createTextNode("Lab"));
+				selItmOpt2.setAttribute("option","Qz");
+				selItmOpt2.appendChild(document.createTextNode("Quiz"));
+				selItmOpt3.setAttribute("option","Mid");
+				selItmOpt3.appendChild(document.createTextNode("Midterm"));
+				selItmOpt4.setAttribute("option","Fin");
+				selItmOpt4.appendChild(document.createTextNode("Final"));
+				selItm.appendChild(selItmOpt1);
+				selItm.appendChild(selItmOpt2);
+				selItm.appendChild(selItmOpt3);
+				selItm.appendChild(selItmOpt4);
+
+				var texta = document.createElement("input");
+				texta.setAttribute("text","txta");
+				var textb = document.createElement("input");
+				textb.setAttribute("text","txtb");
+				
+				var selProf = document.createElement("select");
+				selProf.setAttribute("select","sProf");
+				var selProfOpt1 = document.createElement("option");
+				var selProfOpt2 = document.createElement("option");
+				var selProfOpt3 = document.createElement("option");
+				selProfOpt1.setAttribute("option","David");
+				selProfOpt1.appendChild(document.createTextNode("David"));
+				selProfOpt2.setAttribute("option","Patrick");
+				selProfOpt2.appendChild(document.createTextNode("Patrick"));
+				selProfOpt3.setAttribute("option","Albert");
+				selProfOpt3.appendChild(document.createTextNode("Albert"));
+				selProf.appendChild(selProfOpt1);
+				selProf.appendChild(selProfOpt2);
+				selProf.appendChild(selProfOpt3);
+				
+				
+				
+				cell1.appendChild(btnSub);
+				cell2.appendChild(selItm);
+				cell3.appendChild(texta); 
+				cell4.appendChild(textb); 
+				cell5.appendChild(selProf);
+
+				
+			}
+
+			function sub(button){
+				
+				button.parentNode.parentNode.parentNode.removeChild(button.parentNode.parentNode);
+				
+
+		}
+		</script>
+</body>
+
+</html>

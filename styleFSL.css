@@ -1,0 +1,31 @@
+#table_forstu{
+	position:absolute;
+	top:30%;
+	left:15%;
+	width:70%;
+	border-size:0.5pt;
+	border-color: white;
+	text-align: center;
+}
+#table_forme{
+	position:absolute;
+	top:35%;
+	left:15%;
+	width:70%;
+	border-size:0.5pt;
+	border-color: white;
+	text-align: center;
+}
+th{
+	background-color:DarkTurquoise;
+}
+#tr_odd{
+	background-color:LightBlue;
+}
+#tr_even{
+	background-color:PaleTurquoise; 
+}
+#div_apprornot{
+	float: center;
+	text-align: left;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>grade percentage</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styleFPA0&FPM1try.css">	
+</head>
+
+<body>
+	<div>
+	<form action="action_page.php">
+		
+		<table id="table">
+			
+			<tr>
+				<th class="putbutton"><button id="button_add" type="button" value="+"; onclick="add()"><b>+</b></button></th>
+				<th>Name</th>
+				<th>Account</th>
+				<th>Password</th>
+				
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd"><input  id="Name" type="text" value="Name"></td>
+				<td class="tr_odd" ><input  id="Acc" type="text"></td>
+				<td class="tr_odd"><input  id="Psw" type="text"></td>
+				
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_even"><input  id="Name" type="text" value="Name"></td>
+				<td class="tr_even"><input  id="Acc" type="text"></td>
+				<td class="tr_even"><input  id="Psw" type="text"></td>
+				
+			</tr>
+			<tr>
+				<td class="putbutton"><button id="button_sub" type="button" value="-" onclick="sub(this)"><b>-</b></button></td>
+				<td class="tr_odd"><input  id="Name" type="text" value="Name"></td>
+				<td class="tr_odd"><input  id="Acc" type="text"></td>
+				<td class="tr_odd"><input  id="Psw" type="text"></td>
+				
+			</tr>
+				<div id="addrow"></div>
+			<br>
+			<br>
+			
+		</table>
+		<button id="buttonsubmit" type="submit" value="save">save</button>
+		</div>
+		</form>
+		
+
+		<script>
+			function add(){
+				var numofRow = document.getElementById("table").rows.length;
+				
+				var row = document.getElementById("table").insertRow(numofRow);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+				var cell4 = row.insertCell(3);
+				
+				
+				if(numofRow%2==1){
+				cell2.setAttribute("class","tr_odd");
+				cell3.setAttribute("class","tr_odd");
+				cell4.setAttribute("class","tr_odd");
+				}
+				else{
+					cell2.setAttribute("class","tr_even");
+					cell3.setAttribute("class","tr_even");
+					cell4.setAttribute("class","tr_even");
+				}
+
+				var btnSub = document.createElement("button");
+				btnSub.setAttribute("type","button");
+				btnSub.appendChild(document.createTextNode("-"));
+				btnSub.setAttribute("onclick","sub(this)");
+
+				var tetNm = document.createElement("input");
+				tetNm.setAttribute("type","text");
+
+				var tetAcc = document.createElement("input");
+				tetAcc.setAttribute("type","text");
+
+				var tetPsw = document.createElement("input");
+				tetPsw.setAttribute("type","text");
+
+				
+				cell1.appendChild(btnSub);
+				cell2.appendChild(tetNm);
+				cell3.appendChild(tetAcc); 
+				cell4.appendChild(tetPsw);
+					
+				}
+
+			function sub(button){
+				
+				button.parentNode.parentNode.parentNode.removeChild(button.parentNode.parentNode);
+				
+
+			}
+		</script>
+</body>
+
+</html>
