@@ -90,10 +90,6 @@
 		
 
 		<script>
-			function sub(button){
-				/*button.parentNode.parentNode.removeChild(button.parentNode);*/
-				button.parentNode.parentNode.parentNode.removeChild(button.parentNode.parentNode);
-			}
 			function add(){
 				var numofRow = document.getElementById("table").rows.length;
 				/*var elmnt = document.getElementByTagName(tr)[numofRow];
@@ -107,7 +103,7 @@
 				var cell4 = row.insertCell(3);
 				var cell5 = row.insertCell(4);
 
-				if(numofRow%2==0){
+				if(numofRow%2==1){
 					cell2.setAttribute('class','tr_odd');
 					cell3.setAttribute('class','tr_odd');
 					cell4.setAttribute('class','tr_odd');
@@ -121,19 +117,59 @@
 				}
 
 				var btnSub = document.createElement("button");
-				var text = document.createElement("input");
-				var selProf = document.createElement("select");
-				//btnSub.onclick = sub(this);
-				text.setAttribute("text","txt");
-				
-				//selectProf.setAttribute("option","David","Patrick","Albert");
-				cell1.appendChild(btnSub);
-				cell2.appendChild(selectProf);
-				cell3.appendChild(text); 
-				cell4.appendChild(Text2); 
-				cell5.appendChild(selectProf);
+				btnSub.setAttribute("type","button");//default可能是submit, 所以要specify
+				btnSub.appendChild(document.createTextNode("-"));
+				btnSub.setAttribute("onclick" , "sub(this)");//要這樣,不能直接btnSub.onclick=sub(this)
 
-				/*var elmntBtnsub = document.getElementById("button_sub");
+				var selItm = document.createElement("select");
+				selItm.setAttribute("select","sItm");
+				var selItmOpt1 = document.createElement("option");
+				var selItmOpt2 = document.createElement("option");
+				var selItmOpt3 = document.createElement("option");
+				var selItmOpt4 = document.createElement("option");
+				selItmOpt1.setAttribute("option","Lab");// 不確定需不需要set這個attribute
+				selItmOpt1.appendChild(document.createTextNode("Lab"));
+				selItmOpt2.setAttribute("option","Qz");
+				selItmOpt2.appendChild(document.createTextNode("Quiz"));
+				selItmOpt3.setAttribute("option","Mid");
+				selItmOpt3.appendChild(document.createTextNode("Midterm"));
+				selItmOpt4.setAttribute("option","Fin");
+				selItmOpt4.appendChild(document.createTextNode("Final"));
+				selItm.appendChild(selItmOpt1);
+				selItm.appendChild(selItmOpt2);
+				selItm.appendChild(selItmOpt3);
+				selItm.appendChild(selItmOpt4);
+
+				var texta = document.createElement("input");
+				texta.setAttribute("text","txta");
+				var textb = document.createElement("input");
+				textb.setAttribute("text","txtb");
+				
+				var selProf = document.createElement("select");
+				selProf.setAttribute("select","sProf");
+				var selProfOpt1 = document.createElement("option");
+				var selProfOpt2 = document.createElement("option");
+				var selProfOpt3 = document.createElement("option");
+				selProfOpt1.setAttribute("option","David");
+				selProfOpt1.appendChild(document.createTextNode("David"));
+				selProfOpt2.setAttribute("option","Patrick");
+				selProfOpt2.appendChild(document.createTextNode("Patrick"));
+				selProfOpt3.setAttribute("option","Albert");
+				selProfOpt3.appendChild(document.createTextNode("Albert"));
+				selProf.appendChild(selProfOpt1);
+				selProf.appendChild(selProfOpt2);
+				selProf.appendChild(selProfOpt3);
+				
+				
+				
+				cell1.appendChild(btnSub);
+				cell2.appendChild(selProf);
+				cell3.appendChild(texta); 
+				cell4.appendChild(textb); 
+				cell5.appendChild(selProf);
+
+				/*原方法：用clone,但bug是如果被clone 者被刪除,則就不能再複製了,所以用上面的方法:create
+				var elmntBtnsub = document.getElementById("button_sub");
 				var cloneBtnsub = elmntBtnsub.cloneNode(true);
 				var elmntItem = document.getElementById("selectItem");
 				var cloneItem = elmntItem.cloneNode(true);
