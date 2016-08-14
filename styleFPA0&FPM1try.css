@@ -36,10 +36,11 @@ th{
 }
 #buttonsubmit{
 	position: relative;
-	top:350pt;
 	left:45%;
 	width:34pt;
 	border-radius: 0;
+	margin-top: 40pt;
+	margin-bottom: 60pt;
 }
 #button_add{
 	
@@ -78,5 +79,10 @@ button:hover{
 	width:90pt;
 	border-radius: 0;
 }
-
+/*round-button{
+	background-color:#606060;
+}
+round-button:hover{
+	background-color:#464646;
+}*/
 
