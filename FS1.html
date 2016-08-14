@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+	<style>
+		html,body{
+			height:100%;
+     		background-color: #D6E8FC;
+		}
+		div.container{
+			width:100%;
+			border: none;
+		}
+		header{
+			padding: 1em;
+			color: white;
+			background-color: #2186C4;
+			text-align:left;
+		}
+		nav{
+			width:98.5%;
+			margin:0;
+			padding:5px;
+			padding-left: 20px;
+			background-color: #FFF6E5;
+			color: white;
+		}
+		.main{
+			margin:0;
+			border:none;
+			padding: 10px;
+			overflow: hidden;
+			width:100%;
+		}
+		footer{
+			padding: 5px;
+			height:110px;
+			color:white;
+			background-color: #2186C4;
+			text-align:center;
+			clear:left;
+			top:0;
+			position:relative;
+			width:99%;
+		}
+		form{
+			padding-top: 20vh;
+			min-height: 44vh;
+		}
+		.row{
+			text-align: center;
+			padding:10px;
+		}
+		input.text{
+			border:1px solid black;
+			width:300px;
+			height:20px;
+			padding-left: 3px;
+		}
+		input.button{
+			font-size: 16px;
+		}
+		
+		
+	</style>
+</head>
+
+<body>
+	<div class = "container">
+
+		<header>
+			<h1>TAFree</h1>
+		</header>
+
+		<nav>
+			<p>Hi!</p>
+		</nav>
+
+		<div class="main">
+			<form>
+				<div class="row">
+					<input type="text" value="Student List File.csv" class="text">
+					<input type="button" value="..." class="button">
+				</div>
+				<div class="row">
+					<input type="button" value="&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;" class="button" onclick="confirm('Sure?')">
+				</div>
+			</form>
+		</div>
+
+		<footer>
+			<p>@2016 TAFree project</p>
+			<p>Testing...</p>
+		</footer>
+
+	</div>
+
+</body>
+</html>
