@@ -29,7 +29,7 @@
 			padding: 10px;
 			overflow: hidden;
 			width:99%;
-			height: 67%;
+			height: 68%;
 		}
 		#lab1{
 			display:none;
@@ -51,19 +51,13 @@
 		.lr{
 			float: left;
 			text-align:center;
-			height: 90%;
+			height: 100%;
 			width:25%;
 		}
 		.mid{
 			float: left;
-			height:90%;
+			height:100%;
 			width:50%;
-		}
-		.row{
-			float: left;
-			height:10%;
-			width:100%;
-			text-align: center;
 		}
 		svg{
 			position: relative;
@@ -71,19 +65,18 @@
 			left:50%;
 			margin:-200px 0 0 -200px;
 		}
-		img{
+		input.button{
+			font-size: 16px;
 			top:40%;
 			position: relative;
-			width:80px;
-			height:100px;
 		}
-		input{
-			font-size: 20px;
+		input[name="pre"]{
+			display:;
 		}
-
+		
 	</style>
 
-	<script type="text/javascript" src = "SVGminus.js"></script>
+	<script type="text/javascript" src = "SVG.js"></script>
 
 </head>
 
@@ -100,7 +93,7 @@
 
 		<div class="main">
 			<div class="lr">
-				<span style="cursor:pointer"><img src="svg/left-arrow.svg" onclick="pre()"></span>
+				<input type="button" value="<<pre" class="button" name="pre" onclick="pre()">
 			</div>
 			<div class="mid" id="lab1">
 				<svg id = "Lab" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -112,10 +105,7 @@
 				<svg id = "Lab" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
 			</div>
 			<div class="lr">
-				<span style="cursor:pointer"><img src="svg/play.svg" onclick="next()"></span>
-			</div>
-			<div class="row">
-				<input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;" class="button" onclick="confirm('Sure?')">
+				<input type="button" value="next>>" class="button" name="next" onclick="next()">
 			</div>
 		</div>
 
